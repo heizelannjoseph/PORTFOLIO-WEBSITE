@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body class="about-page">
+  <div class="container">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+       <a href="./index.html" class="nav-link">Welcome</a>
+      </li>
+      <li class="nav-item">
+        <a href="./about.html" class="nav-link active">About Me</a>
+      </li>
+      <li class="nav-item">
+        <a href="./projects.html" class="nav-link">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a href="./skills.html" class="nav-link">Skills</a>
+      </li>
+      <li class="nav-item">
+        <a href="./cna.html" class="nav-link">Certifications & Achievements</a>
+      </li>
+      <li class="nav-item">
+        <a href="./Contact.html" class="nav-link">Contact Me</a>
+      </li>
+    </ul>
+  </header>
+</div>
+
+  <div class="star-frame">
+    <div class="about-text-box glow typewriter">
+      <h2 class="glow-heading">✍️ About Me</h2>
+      <div class="line" data-content="📝 Name: Heizel Ann Joseph"></div>
+      <div class="line" data-content="🎓 Education: Final Year B.Tech CSE Student @ Amal Jyothi College of Engineering, Kanjirappally \n Year of Graduation : 2026"></div>
+      <div class="line" data-content="💡 Interests: Web Dev - to create amazing websites,\n
+       Problem Solving - interested in solving real-world problems because modern problems require modern solutions right,\n
+        UI/UX Design - because design gives life to websites,\n
+         JS Frameworks - because they are simply interesting"></div>
+      <div class="line" data-content="🔧 Tech Stack: HTML, CSS, JS | Bootstrap, React | SQL | Git & VS Code"></div>
+      <div class="line" data-content="🎯 Goal: To build web apps that make people say “WOW!”"></div>
+    </div>
+  </div>
+<script>
+  const lines = document.querySelectorAll('.line');
+
+lines.forEach((line, index) => {
+  const rawText = line.dataset.content;
+  const text = rawText.replace(/\\n/g, "\n");  
+  line.textContent = '';
+
+  setTimeout(() => {
+    [...text].forEach((char, i) => {
+      setTimeout(() => {
+        line.textContent += char;
+      }, i * 30);
+    });
+  }, index * 2000);
+});
+</script>
+
+<footer class="pinky">
+  <div class="footer-container">
+    <nav class="footer-nav">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About Me</a>
+      <a href="./skills.html">Skills</a>
+      <a href="./projects.html">Projects</a>
+      <a href="./cna.html">Certifications & Achievements</a>
+      <a href="./Contact.html">Contact</a>
+    </nav>
+    <p class="footer-copy">© 2025 Portfolio of Heizel Ann Joseph</p>
+  </div>
+</footer>
+
+</body>
+</html>

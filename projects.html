@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./projstyle.css">
+</head>
+<body>
+
+<canvas id="sparkles"></canvas>
+
+<div class="container">
+  <header class="d-flex justify-content-center py-3">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+       <a href="./index.html" class="nav-link">Welcome</a>
+      </li>
+      <li class="nav-item">
+        <a href="./about.html" class="nav-link">About Me</a>
+      </li>
+      <li class="nav-item">
+        <a href="./projects.html" class="nav-link active">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a href="./skills.html" class="nav-link">Skills</a>
+      </li>
+      <li class="nav-item">
+        <a href="./cna.html" class="nav-link">Certifications & Achievements</a>
+      </li>
+      <li class="nav-item">
+        <a href="./Contact.html" class="nav-link">Contact Me</a>
+      </li>
+    </ul>
+  </header>
+</div>
+
+  <header>
+    <h1>✨ My Projects ✨</h1>
+    <p>Creative. Functional. Purpose-Driven.</p>
+  </header>
+ 
+  <section class="project">
+    <h2>GeriatricPlus – Your One-Stop Solution for Elderly Care 💗</h2>
+    <p>
+      Developed as part of my S6 Mini Project, <strong>GeriatricPlus</strong> is a Flutter-based mobile app dedicated to assisting senior citizens. It acts as a reliable digital companion for those struggling with memory and routine. Built using Flutter and a NoSQL database, it offers:
+    </p>
+    <ul style="margin-left: 1rem;">
+      <li>⏰ Timely <strong>Medicine Reminders</strong> and <strong>Activity Alerts</strong> (Food, Exercise, Sleep)</li>
+      <li>📍 An <strong>Emergency Alert System</strong> that sends SMS with current location to saved emergency contacts</li>
+      <li>👤 A sleek <strong>User Dashboard</strong> with name, age, DOB, phone number, and contact info</li>
+    </ul>
+    <p>This app was designed to bring peace of mind to families and dignity to elders – simple, thoughtful, and life-saving.</p>
+    <div class="gallery">
+      <img src="./images/1.jpg" alt="GeriatricPlus Screenshot 1">
+      <img src="./images/2.jpg" alt="GeriatricPlus Screenshot 2">
+      <img src="./images/3.jpg" alt="GeriatricPlus Screenshot 3">
+      <img src="./images/4.jpg" alt="GeriatricPlus Screenshot 4">
+      <img src="./images/5.jpg" alt="GeriatricPlus Screenshot 5">
+      <img src="./images/6.jpg" alt="GeriatricPlus Screenshot 6">
+      <img src="./images/7.jpg" alt="GeriatricPlus Screenshot 7">
+    </div>
+  </section>
+
+  <section class="project">
+    <h2>MeowME – The Purr-fect Marketplace for Cat Lovers 🐾</h2>
+    <p>
+      Still in development, <strong>MeowME</strong> is an online platform built to connect cat enthusiasts who wish to buy or sell cats responsibly. A blend of sleek UI and community trust, the platform will provide breed filters, health certificates, and a safe interface for feline transactions.
+    </p>
+    <div class="gallery">
+      <img src="./images/meow1.png" alt="MeowME Screenshot 1">
+      <img src="./images/meow2.png" alt="MeowME Screenshot 2">
+      <img src="./images/meow3.png" alt="MeowME Screenshot 1">
+      <img src="./images/meow4.png" alt="MeowME Screenshot 2">
+      <img src="./images/meow5.png" alt="MeowME Screenshot 1">
+    </div>
+  </section>
+
+  <section class="project">
+    <h2>PickUp – Fast, Friendly Local Deliveries 🚚</h2>
+    <p>
+      <strong>PickUp</strong> is a delivery service online platform currently under construction. It aims to connect customers with local stores and freelance couriers for rapid, doorstep delivery. Featuring real-time tracking, order management, and vendor dashboards – it's being built to be both functional and fabulous.
+    </p>
+    <div class="gallery">
+      <img src="./images/pick1.png" alt="PickUp Screenshot 1">
+      <img src="./images/pick2.png" alt="PickUp Screenshot 2">
+    </div>
+  </section>
+
+  <footer>
+    Made with love and a lot of coffee. | Heizel Ann Joseph
+  </footer>
+<script>
+  const canvas = document.getElementById("sparkles");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let sparkles = Array.from({length: 60}, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 1.5 + 0.5,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5
+  }));
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    sparkles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(255, 182, 193, 0.7)";
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+
+
+<footer class="pinky">
+  <div class="footer-container">
+    <nav class="footer-nav">
+      <a href="#">Home</a>
+      <a href="./about.html">About Me</a>
+      <a href="./skills.html">Skills</a>
+      <a href="./projects.html">Projects</a>
+      <a href="./cna.html">Certifications & Achievements</a>
+      <a href="./Contact.html">Contact</a>
+    </nav>
+    <p class="footer-copy">© 2025 Portfolio of Heizel Ann Joseph</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
